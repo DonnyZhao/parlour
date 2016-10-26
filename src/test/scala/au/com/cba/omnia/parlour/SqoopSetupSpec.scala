@@ -34,10 +34,14 @@ Should be able to infer delimiters for:
 
 """
 
+  // Warning: these tests use a hacky way to construct Taps, in that they pass a dummy HDFS path and
+  // rely on the implementation-specific detail that under strictSources mode i.e. `Hdfs(true, ...)`
+  // the existence of the path is not checked by createTap (that check is deferred to validateTaps).
+
   object inferPath {
     def typedPsv = {
       //given
-      val tap = TypedPsv[String]("/test/path").createTap(Read)(Hdfs(false, new Configuration()))
+      val tap = TypedPsv[String]("/test/path").createTap(Read)(Hdfs(true, new Configuration()))
       //when
       val pathOpt = SqoopSetup.inferPathFromTap(tap)
       //then
@@ -46,7 +50,7 @@ Should be able to infer delimiters for:
 
     def csv = {
       //given
-      val tap = Csv("/test/path").createTap(Read)(Hdfs(false, new Configuration()))
+      val tap = Csv("/test/path").createTap(Read)(Hdfs(true, new Configuration()))
       //when
       val pathOpt = SqoopSetup.inferPathFromTap(tap)
       //then
@@ -57,7 +61,7 @@ Should be able to infer delimiters for:
   object inferDelimiter{
     def typedPsv = {
       //given
-      val tap = TypedPsv[String]("test").createTap(Read)(Hdfs(false, new Configuration()))
+      val tap = TypedPsv[String]("test").createTap(Read)(Hdfs(true, new Configuration()))
       //when
       val delims = SqoopSetup.inferDelimitersFromTap(tap)
       //then
@@ -68,7 +72,7 @@ Should be able to infer delimiters for:
 
     def csv = {
       //given
-      val tap = Csv("test").createTap(Read)(Hdfs(false, new Configuration()))
+      val tap = Csv("test").createTap(Read)(Hdfs(true, new Configuration()))
       //when
       val delims = SqoopSetup.inferDelimitersFromTap(tap)
       //then

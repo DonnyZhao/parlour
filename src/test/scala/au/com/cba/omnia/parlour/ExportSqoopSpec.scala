@@ -19,7 +19,7 @@ import scala.util.Failure
 
 import java.util.UUID
 
-import com.twitter.scalding.{Csv, Execution}
+import com.twitter.scalding.Csv
 
 import scalikejdbc.{SQL, AutoSession, ConnectionPool}
 

@@ -14,16 +14,12 @@
 
 package au.com.cba.omnia.parlour
 
-import java.util.UUID
-
 import scalaz.Scalaz._
 
-import org.apache.hadoop.conf.Configuration
-
-import com.twitter.scalding.{Args, Execution, Mode, Read, Source, Write}
+import com.twitter.scalding.{Execution, Read, Source, Write}
 
 import org.apache.sqoop.Sqoop
-import org.apache.sqoop.tool.{EvalSqlTool, ExportTool, ImportTool}
+import org.apache.sqoop.tool.{ExportTool, ImportTool}
 
 import au.com.cba.omnia.parlour.SqoopSyntax.{ParlourExportDsl, ParlourImportDsl}
 import au.com.cba.omnia.parlour.SqoopSetup.Delimiters

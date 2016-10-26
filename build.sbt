@@ -18,7 +18,7 @@ uniformDependencySettings
 
 strictDependencySettings
 
-val thermometerVersion = "1.4.3-20160617114144-562e6e0"
+val thermometerVersion = "1.4.5-20160926051817-997b9b9"
 
 libraryDependencies ++=
   depend.hadoopClasspath ++
@@ -26,7 +26,7 @@ libraryDependencies ++=
     depend.scalaz() ++ Seq(
       "au.com.cba.omnia"          %% "thermometer" % thermometerVersion % "test",
       noHadoop("org.scalikejdbc"  %% "scalikejdbc" % "2.1.2"            % "test"),
-      noHadoop("org.apache.sqoop"  % "sqoop"       % "1.4.5-cdh5.2.4")
+      noHadoop("org.apache.sqoop"  % "sqoop"       % "1.4.5-cdh5.3.8")
     )
 
 uniformThriftSettings
@@ -41,5 +41,5 @@ uniform.docSettings("https://github.com/CommBank/parlour")
 
 uniform.ghsettings
 
-// No point having deprecation warnings since Sqoop forces us to use deprecated classes.
+// No point having deprecation warnings since Sqoop forces us to use deprecated classes (i.e. SqoopOptions)
 scalacOptions := scalacOptions.value.filter(_ != "-deprecation")

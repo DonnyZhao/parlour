@@ -16,7 +16,7 @@ package au.com.cba.omnia.parlour
 
 import org.apache.sqoop.tool.EvalSqlTool
 
-/** Uses Sqoop's [[EvalSqlToop]] to evaluate sql queries. */
+/** Uses Sqoop's [[EvalSqlTool]] to evaluate sql queries. */
 object SqoopEval {
   /** Calls [[EvalSqlTool]] to execute an sql query if any */
   def evalSql(options: ParlourOptions[_]): Option[Unit] =

@@ -18,9 +18,11 @@ import java.util.Properties
 
 import scalaz.Monoid
 
-import com.cloudera.sqoop.SqoopOptions
-
 import com.twitter.scalding._
+
+// Although marked as deprecated (in favour of org.apache.sqoop.SqoopOptions), we need to
+// continue using this for now because tools like EvalSqlTool currently require it.
+import com.cloudera.sqoop.SqoopOptions
 
 import org.apache.hadoop.conf.Configuration
 
