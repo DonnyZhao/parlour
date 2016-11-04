@@ -367,7 +367,7 @@ trait TeradataParlourOptions[+Self <: TeradataParlourOptions[_]] extends Parlour
 
   /** Force the connector to create the staging table if input/output method support the staging tables. */
   def forceStaging() = addExtraArgs(Array(FORCE_STAGING))
-  addBoolean("teradata-force-staging", () => so => addExtraArgsRaw(Array(FORCE_STAGING))(so))
+  addBoolean("teradata-staging-force", () => so => addExtraArgsRaw(Array(FORCE_STAGING))(so))
   def getForceStaging = getExtraBooleanArg(FORCE_STAGING)
 
   /**
@@ -380,7 +380,7 @@ trait TeradataParlourOptions[+Self <: TeradataParlourOptions[_]] extends Parlour
 
   /** By default, the connector will use Teradata system views to obtain metadata. Using this parameter the connector will switch to XViews instead. */
   def skipXviews() = addExtraArgs(Array(SKIP_VIEW))
-  addBoolean("teradata-skip-xview", () => so => addExtraArgsRaw(Array(SKIP_VIEW))(so))
+  addBoolean("teradata-skip-xviews", () => so => addExtraArgsRaw(Array(SKIP_VIEW))(so))
   def getSkipXviews = getExtraBooleanArg(SKIP_VIEW)
 }
 
@@ -388,9 +388,9 @@ object TeradataParlourOptions {
   val STAGING_TABLE     = "--staging-table"
   val STAGING_DATABASE  = "--staging-database"
   val BATCH_SIZE        = "--batch-size"
-  val FORCE_STAGING     = "--force-staging"
+  val FORCE_STAGING     = "--staging-force"
   val QUERY_BAND        = "--query-band"
-  val SKIP_VIEW         = "--skip-xview"
+  val SKIP_VIEW         = "--skip-xviews"
 }
 
 sealed trait TeradataInputMethod

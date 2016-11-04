@@ -65,11 +65,11 @@ Should build proper SqoopOptions:
 
     def extraArgsViaAddBoolean = {
       //given
-      val args = Args("--teradata-skip-xview" :: requiredSqoopImportArgList)
+      val args = Args("--teradata-skip-xviews" :: "--teradata-staging-force" :: requiredSqoopImportArgList)
       //when
       val so = TeradataParlourImportDsl().setOptions(args).toSqoopOptions
       //then
-      so.getExtraArgs must beEqualTo(Array("--skip-xview"))
+      so.getExtraArgs must beEqualTo(Array("--staging-force", "--skip-xviews"))
     }
 
     def extraArgsViaAddOptional = {
