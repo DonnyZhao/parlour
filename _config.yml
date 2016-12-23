@@ -1,0 +1,5 @@
+name: parlour
+exclude: [Gemfile]
+markdown: kramdown
+
+releaseVersion: 1.12.6-20161223050842-2ddaf21
