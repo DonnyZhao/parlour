@@ -19,7 +19,7 @@ after_script:
 - rm -rf ci
 env:
   global:
-  - CI_VERSION=3.2.2-20160718231250-50a210b
+  - CI_VERSION=3.3.1-20161112085142-c2c258a
   - secure: hHSykHBWyIHK1o4ao48FXQIqv7xHYS9zRpS35r9jvBxFJ6uWCtcSh9TlHEx8xwvxRkf7uO1Obkn96nSNkujFvT5aZTEynEQx5GM+QqvzuR7f7WeoMsAQA4UrZACapRgS4tKPn6bbVmFkJ6XmZ0BBCvC+SOw0R4Vl9Jpyt40bIMs=
   - secure: c6wZgIToaP52YvHWzCjO8d+pFysnowWljBQnC5HNsYaLOb3IjNLSJjrAi8T2aWm2mPZk4KeLup55BF0IRsBSlgSrmyp9hMDZ+09r/zq52xUgkKSNjhtPa8I0GuQPr9n0Ku8M4JCA5ejcVdNFpIdo4BAkSQtZ9Nes6/n/MEDFNwg=
 before_install:
