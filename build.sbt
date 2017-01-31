@@ -18,7 +18,7 @@ uniformDependencySettings
 
 strictDependencySettings
 
-val thermometerVersion = "1.5.2-20170124200333-758c16c"
+val thermometerVersion = "1.5.3-20170131184221-ffa2ce0"
 
 libraryDependencies ++=
   depend.hadoopClasspath ++
